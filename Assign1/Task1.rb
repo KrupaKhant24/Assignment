@@ -1,3 +1,6 @@
+COMPANY_NAME = "Software Ltd."
+$productcompany = "DELL"
+
 class Product	
   def initialize(name,price)
   @pname=name
@@ -5,24 +8,25 @@ class Product
   end
   def create()
        puts "enter your name"
-       @@pn=gets
+       @pn=gets
        puts "enter gst"
-       @@p=gets
+       @p=gets
    end
 
    def calc()
      final=@pprice.to_i;
-     final1=@@p.to_i;
+     final1=@p.to_i;
      total=final * final1 / 100;
-     @@answer=@pprice + total;
+     @answer=@pprice + total;
   
    end
    def get_user()
      create()
      calc()
-     print "Welcome #{@@pn}. Your invoice with #{@@p}% gst are below"
+     puts "Welcome to our #{COMPANY_NAME}"
+     puts "Welcome #{@pn}. Your invoice with #{@p}% gst are below"
      puts "Product details"
-     puts "#{@pname} - #{@@answer}" 
+     puts "#{$productcompany} :: #{@pname} - #{@answer}" 
      end
      
    
@@ -34,13 +38,3 @@ class Product
       product2.get_user
    end
 end
-  
-   
-
-
-
-
-   
-  
-
-
